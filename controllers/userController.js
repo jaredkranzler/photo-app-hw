@@ -6,7 +6,7 @@ const User = require('../models/user')
 router.get('/', (req, res) => {
   User.find({}, (err, foundUsers) => {
     
-    res.render('users/index.ejs', {
+    res.render('./users/index.ejs', {
       users: foundUsers
     });
   });
@@ -14,13 +14,13 @@ router.get('/', (req, res) => {
 
 // NEW
 router.get('/new', (req, res) => {
-  res.render('users/new.ejs');
+  res.render('./users/new.ejs');
 });
 
 //SHOW
 router.get('/:id', (req, res) => {
   User.findById(req.params.id, (err, foundUser) => {
-    res.render('users/show.ejs', {
+    res.render('./users/show.ejs', {
       user: foundUser
     });
   });
@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
 router.get('/:id/edit', (req, res) => {
   
   User.findById(req.params.id, (err, foundUser) => {
-    res.render('users/edit.ejs', {
+    res.render('./users/edit.ejs', {
       user: foundUser
     });
   });

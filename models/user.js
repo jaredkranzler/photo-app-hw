@@ -4,6 +4,7 @@ const userSchema = mongoose.Schema({
   username: {type: String, unique: true},
   password: {type: String, required: true},
   dateAdded: Date,
+  aboutPhoto: String,
   photo: String
 });
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <header>
+    <h1><%= user.username %></h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/users">Back to User Index</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <ul>
+        <li> <%= user.dateAdded %></li>
+        <li><img src="<%= user.photo %>"></li>
+        <form action="/users/<%=user.id%>?_method=DELETE" method="POST">
+          <button>Delete info</button>
+        </form>
+      </ul>
+    </section>
+    <section>
+      <a href="/authors/<%=author.id%>/edit">Edit</a>
+    </section>
+  </main>
+
+</body>
+</html>

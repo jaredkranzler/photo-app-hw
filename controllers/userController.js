@@ -30,8 +30,8 @@ router.get('/:id', (req, res) => {
 router.get('/:id/edit', (req, res) => {
   
   User.findById(req.params.id, (err, foundUser) => {
-    res.render('authors/edit.ejs', {
-      author: foundAuthor
+    res.render('users/edit.ejs', {
+      user: foundUser
     });
   });
 });
@@ -67,7 +67,7 @@ router.delete('/:id', (req, res) => {
 });
 
 
-module.exports = router:
+module.exports = router;
 
 
 

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <head>
+    <h1>Edit your info</h1>
+      <nav>
+         <form method="POST" action="/users/<%=index%>?_method=PUT">
+          Name: <input type="text" name="username" value="<%= user.username%>">
+          Pawssword: <input type="text" name="password" value="<%=user.password%>">
+          photo: <input type="url" name="photo">
+    <br/>
+    <input type="submit" name="submit changes"/>
+  </form>
+
+      </nav>
+  </head>
+</body>
+</html>

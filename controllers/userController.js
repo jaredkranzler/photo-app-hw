@@ -66,8 +66,37 @@ router.delete('/:id', (req, res) => {
     })
 });
 
+// Delete
+router.delete('/:id', (req, res) => {
+  
+  User.findByIdAndRemove(req.params.id, (err, deletedUser) => {
+    console.log(deletedUser, ' this is deletedUser')
+
+    const photoIds = [];
+    for (let i = 0; i < foundUser.photos.length; i++){
+      photoIds.push(foundUser.photos[i]._id);
+    }
+    Photo.remove({
+      _id: {$in: photoIds}
+    }, (err, data) => {res.redirect('/users')
+    });
+  });
+});
+
+
+
+
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
 
 
 

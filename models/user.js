@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
+const Photo = require('./photo')
 
 const userSchema = mongoose.Schema({
-  username: {type: String, unique: true},
+  username: {type: String, unique: true, required: true},
   password: {type: String, required: true},
-  dateAdded: Date,
-  aboutPhoto: String,
-  photo: String
+  // photo: [Photo.schema]
+
 });
 
 
 
-
+// const User = mongoose.model('User', userSchema);
 
 module.exports = mongoose.model('User', userSchema);
 

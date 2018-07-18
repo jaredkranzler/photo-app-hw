@@ -12,6 +12,8 @@ app.use(methodOverride('_method'));
 
 const userController = require('./controllers/userController');
 app.use('/users', userController)
+const photoController = require('./controllers/photoController');
+app.use('/photos', photoController)
 
 app.get('/', (req, res) => {
   res.render('index.ejs');
@@ -19,5 +21,5 @@ app.get('/', (req, res) => {
 
 
 app.listen(3000, () => {
-  console.log('app is listening on port 3000')
+  console.log('app is listening on port 3400')
 });
